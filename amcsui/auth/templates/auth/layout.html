@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auth: {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav class="bg-light border navbar navbar-expand-md navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <span class="blue">R</span>
+                <span class="red">I</span>
+                <span class="yellow">K</span>
+                <span class="green">@</span> 
+            </a>
+        </div>
+    </nav>
+        <main class="container py-5 text-center">
+        {% block body %}{% endblock %}
+</body>
+</html>

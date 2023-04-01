@@ -1,0 +1,15 @@
+{% extends "auth/layout.html"%}
+
+{% block title %}Login{% endblock %}
+
+{% block body %} 
+<form action="{% url 'auth:login' %}" method="post">
+    <div class="mb-3">
+        <input type="text" class="form-control mx-auto w-auto" autocomplete="off" autofocus name="username" placeholder="Username">
+    </div>
+    <div class="mb-3">
+        <input type="password" class="form-control mx-auto w-auto" utocomplete="off" autofocus name="password" placeholder="Password" >
+    </div>
+    <button class="btn btn-primary" type="submit">Login</button>
+</form>
+{% endblock %}
