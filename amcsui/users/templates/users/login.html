@@ -1,0 +1,22 @@
+{% extends "users/layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block main %} 
+
+<form action="{% url 'users:login' %}" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" autocomplete="off" autofocus  name="username" placeholder="Username" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" autocomplete="off" autofocus  name="password" placeholder="password" type="password">
+    </div>
+    <button class="btn btn-primary" type="submit">Log In</button>
+</form>
+{% if message %}
+<div>
+    {{message}}
+</div>
+{% endif %}
+{% endblock %}
