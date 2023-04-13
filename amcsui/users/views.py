@@ -18,8 +18,7 @@ def index(request):
     return HttpResponseRedirect(reverse("users:login_view"))
 
 def login_view(request):
-    if request.methode == "POST":
-        #TODO : Auth
+    if request.method == "POST":
         form = LoginForm(request.POST)
 
         if form.is_valid():
