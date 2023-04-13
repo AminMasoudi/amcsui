@@ -1,0 +1,9 @@
+{% extends "users/layout.html" %}
+
+{% block body %}
+<form action="{% url 'users:sign_up' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+</form>
+{% endblock %}
