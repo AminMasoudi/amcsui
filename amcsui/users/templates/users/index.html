@@ -1,0 +1,16 @@
+{% extends "users/layout.html" %}
+
+{% block body %}
+<ul>
+    {% for flight in flights %}
+    <li>{{flight}}</li>
+    {% empty %}
+    <li>you dont have any trip</li>
+    {% endfor %}
+</ul>
+
+<div style="display: flex;">
+    <a href="{% url 'flights:register' %}">book a free flight</a>
+    
+</div>
+{% endblock %}
