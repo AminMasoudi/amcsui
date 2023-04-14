@@ -1,37 +1,25 @@
-from django.shortcuts import render
-from .models import User, userProfile
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.contrib.auth import login, authenticate, logout
-from .forms import LoginForm, Registeration_form
 from django.contrib import messages
-
+from django.contrib.auth import login, authenticate, logout
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import reverse
+from .forms import LoginForm, Registeration_form
+from .models import User, UserProfile
 # Create your views here.
+
+
+#index view
+#shows the trips of user if authenticated else redirect to login
+from .helper_functions import user_index
 def index(request):
-    if request.user.is_authenticated:
-        user = User.objects.get(username=request.user.username)
-        trips = userProfile.objects.get(user=user).trips.all()
-        return render(request,"users/index.html",{
-            "user": user,
-            "flights": trips
-        })
-    return HttpResponseRedirect(reverse("users:login_view"))
 
+    return user_index(request)
+
+
+from .helper_functions import LogUserIn
 def login_view(request):
-    if request.methode == "POST":
-        #TODO : Auth
-        form = LoginForm(request.POST)
-
-        if form.is_valid():
-            username = form.cleaned_data["username"]
-            password = form.cleaned_data["password"]
-            user = authenticate(request, username=username, password=password)
-            if user:
-                login(request, user)
-                return HttpResponseRedirect(reverse("users:index"))
-
-        messages.error(request,f'Invalid username or password')
-        return render(request,'users/login.html',{'form': form})
+    if request.method == "POST":
+        LogUserIn(request)
     
     return render(request, "users/login.html", {"form": LoginForm()})
 
@@ -45,7 +33,7 @@ def signup(request):
 
             if not User.objects.filter(username=username):
                 user = User.objects.create_user(username=username, password=password)
-                passenger = userProfile.objects.create(user=user, email=email)
+                passenger = UserProfile.objects.create(user=user, email=email)
                 passenger.save()
                 login(request, user)
                 return HttpResponseRedirect(reverse("users:user/index"))

@@ -1,0 +1,13 @@
+{% extends "flights/layout.html" %}
+
+{% block body %}
+    <form action="{% url 'flights:bookAflight' %}" method="post">
+        {% csrf_token %}
+        <select name="flight_id" id="flight_id" multiple="">
+            {% for flight in flights %}
+            <option value={{flight.id}}>{{flight}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+{% endblock %}
