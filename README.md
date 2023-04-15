@@ -1,5 +1,4 @@
 # amcsui
-hi farnam
 
 amcsui is just a test name
  
