@@ -14,5 +14,4 @@ thanks for your help
 - Not important but workingon the front-end
 
 ### bugs:
-- super user cannot register for a flight(he dont have a user_profile)
 - return an error when a user register for a flight several times
