@@ -35,3 +35,6 @@ def signup(request):
         logout(request)
     return render(request, "users/sign_up.html", {"form": Registeration_form()})
                 
+def logout_(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("users:login_view"))
