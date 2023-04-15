@@ -11,6 +11,7 @@ thanks for your help
 - add unit-test
 - add some feature to buy and sell products
 - add credit to users
+- Not important but workingon the front-end
 
 ### bugs:
 - super user cannot register for a flight(he dont have a user_profile)
