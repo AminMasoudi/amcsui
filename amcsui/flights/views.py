@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from users.models import userProfile
+from users.models import UserProfile
 from .models import *
 # from .forms import BookingForm
 # Create your views here.
@@ -14,7 +14,7 @@ def index(request):
 def book(request):
     if request.user.is_authenticated:
         user = User.objects.get(username=request.user.username)
-        user_profile = userProfile.objects.get(user=user)
+        user_profile = UserProfile.objects.get(user=user)
         if request.method == "POST":
             #TODO: add a trip to user_profile
             flights_id = request.POST["flight_id"]
