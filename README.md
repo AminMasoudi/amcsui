@@ -11,7 +11,6 @@ thanks for your help
 - add through= in users.models.UserProfile.trips many to many
 - admin page
 - clean flights app
--  
 - debug
 - cleaning the code
 - add unit-test
