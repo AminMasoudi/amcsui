@@ -16,7 +16,6 @@ def book(request):
         user = User.objects.get(username=request.user.username)
         user_profile = UserProfile.objects.get(user=user)
         if request.method == "POST":
-            #TODO: add a trip to user_profile
             flights_id = request.POST["flight_id"]
             flights = list(map(lambda x:Flight.objects.get(id=x),flights_id))
             for i in flights:
