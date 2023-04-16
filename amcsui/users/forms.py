@@ -18,8 +18,7 @@ class LoginForm(forms.Form):
 
 
 
-
-class Registeration_form(UserCreationForm):
+class RegistrationForm(UserCreationForm):
     username = forms.CharField(max_length=65)
     email = forms.EmailField()
 
