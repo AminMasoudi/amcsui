@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from .forms import LoginForm
 from .forms import RegistrationForm
-from .helper_functions import log_user_in, index_view, sign_up_user
+from .helpers import log_user_in, index_view, sign_up_user
 # Create your views here.
 
 
