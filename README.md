@@ -13,7 +13,9 @@ thanks for your help
 - [ ] clean flights app
 - [ ] debug
 - [ ] cleaning the code
+  - [ ] clean flights app 
 - [ ] add unit-test
+  - [ ] add some users to flights test 
 - [ ] add some feature to buy and sell products
 - [ ] add credit to users
 - [ ] Not important but working on the front-end
