@@ -5,6 +5,10 @@ amcsui is just a test name
 :))
 thanks for your help
 
+### FIXME:
+- [ ] return an error when a user register for a flight several times
+
+
 ### TODO
 - [ ] Logger
 - [ ] change some of the names
@@ -17,6 +21,3 @@ thanks for your help
 - [ ] add some feature to buy and sell products
 - [ ] add credit to users
 - [ ] Not important but working on the front-end
-
-### bugs:
-- return an error when a user register for a flight several times
