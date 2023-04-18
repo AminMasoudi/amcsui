@@ -14,7 +14,6 @@ class FLightTestCase(TestCase):
         Flight.objects.create(origin=a, destination=b, duration=100)
 
         #TODO add some users
-
     def test_departure_count(self):
             a = Airport.objects.get(code="AAA")
             self.assertEqual(a.departure.count(),3)
