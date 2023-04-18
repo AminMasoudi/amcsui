@@ -6,11 +6,17 @@ from users.models import UserProfile
 from .models import *
 # from .forms import BookingForm
 # Create your views here.
+
+
+
 def index(request):
     flights = Flight.objects.all()
     return render(request, "flights/index.html", {
         "flights": flights
     })
+
+#TODO: add a helper.py and clean this
+#FIXME: dont book twice
 def book(request):
     if request.user.is_authenticated:
         user = User.objects.get(username=request.user.username)
