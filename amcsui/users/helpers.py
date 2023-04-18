@@ -7,17 +7,7 @@ from django.urls import reverse
 from .forms import LoginForm
 from .forms import RegistrationForm
 from .models import UserProfile
-
-def profile_finder(request):
-    ''' finds `UserProfile` if user has been authenticated
-     else returns `False`'''
-    if request.user.is_authenticated:
-
-        user    = User.objects.get(username=request.user.username)
-        profile = UserProfile.objects.get(user=user)
-        return profile
-
-    return False
+from helpers import profile_finder
 
 
 def index_view(request):
