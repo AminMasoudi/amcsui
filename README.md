@@ -11,7 +11,7 @@ thanks for your help
 
 ### TODO
 - [ ] Logger
-- [ ] change some of the names
+- [x] change some of the names
 - [ ] add through= in users.models.UserProfile.trips many to many
 - [ ] admin page
 - [ ] clean flights app
