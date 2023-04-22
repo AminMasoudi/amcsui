@@ -1,8 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
-from models import Flight
 from helpers import profile_finder
+from .models import Flight
 
 def book_view(request):
     user_profile = profile_finder(request)
