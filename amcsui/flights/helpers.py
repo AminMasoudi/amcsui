@@ -1,11 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
-from models import Flight
 from helpers import profile_finder
+from .models import Flight
 
 def book_view(request):
-    #TODO: booking view
     user_profile = profile_finder(request)
     if user_profile:
         if request.method == "POST":
