@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-f*s-_idl$h3#vux8@&%zk&p@iaz-72)l08#@6%wsgov7-01e03"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
@@ -123,3 +123,31 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers":False,
+
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+            "style": "{",
+        },
+    },
+    
+    "handlers":{
+        "file":{
+            "level":"DEBUG",
+            "class": "logging.FileHandler",
+            "filename": BASE_DIR /"DEBUG.log",
+            "formatter": "verbose"
+        },
+    },
+    "loggers":{
+        "root":{
+            "handlers":["file"],
+            "propagate": True,
+        },
+    }
+}
