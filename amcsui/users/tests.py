@@ -39,9 +39,9 @@ class UsersTestCase(TestCase):
     def test_sign_up_view(self):
         c = Client()
         response = c.post(reverse("users:sign_up"), {"username": "test2",
-                                                        "email": "a@gg.co",
-                                                        "password1": self.password,
-                                                        "password2": self.password})     
+                                                     "email": "a@gg.co",
+                                                     "password1": self.password,
+                                                     "password2": self.password})     
         self.assertEqual(response.status_code, 302, response.cookies)
         self.assertEqual(response.url, reverse("users:index"))
 
