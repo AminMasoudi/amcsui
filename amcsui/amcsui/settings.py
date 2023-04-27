@@ -134,20 +134,36 @@ LOGGING = {
             "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
             "style": "{",
         },
+        "simple": {
+            "format": "{levelname} : {message}",
+            "style": "{"
+        }
     },
     
     "handlers":{
-        "file":{
+        "debug_logs":{
             "level":"DEBUG",
             "class": "logging.FileHandler",
             "filename": BASE_DIR /"DEBUG.log",
-            "formatter": "verbose"
+            "formatter": "simple"
         },
+        "warnings_log":{
+            "level": "WARNING",
+            "class": "logging.FileHandler",
+            "filename": BASE_DIR /"WARNING.log",
+            "formatter": "verbose"
+        }
     },
     "loggers":{
         "root":{
-            "handlers":["file"],
-            "propagate": True,
+            "handlers":["warnings_log",],
+            "propagate": False,
         },
+        "":{
+            "level":"DEBUG",
+            "handlers":["debug_logs",],
+            "propagate": False,
+
+        }
     }
 }
