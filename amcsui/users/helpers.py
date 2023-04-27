@@ -8,7 +8,9 @@ from .forms import LoginForm
 from .forms import RegistrationForm
 from .models import UserProfile
 from helpers import profile_finder
+import logging
 
+logger = logging.getLogger(__name__)
 
 def index_view(request):
     """render `users/index.html` if user is authenticated
