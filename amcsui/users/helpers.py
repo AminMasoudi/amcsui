@@ -21,6 +21,7 @@ def index_view(request):
         return render(request, "users/index.html", {
             "flights": profile.trips.all()
         })
+    logger.debug("not loged in")
     return HttpResponseRedirect(reverse("users:login_view"))
 
 
@@ -31,7 +32,7 @@ def log_user_in(request):
     if user:
         login(request,user)
         return HttpResponseRedirect(reverse("users:index"))
-
+    logger.debug('Invalid username or password')
     messages.error(request,f'Invalid username or password')
     return render(request,'users/login.html',{'form': form})
 
