@@ -10,15 +10,14 @@ thanks for your help
 
 
 ### TODO
-- [ ] __init__ for UserProfile
-- [ ] Logging
+- [x] Logging
   - [ ] add loggers
   - [x] add handler
   - [x] add simple formatter for DEBUG mode
 - [x] change some of the names
 - [ ] add through= in users.models.UserProfile.trips many to many
 - [ ] admin page
-- [ ] clean flights app
+- [x] clean flights app
 - [x] debug
 - [x] cleaning the code
   - [x] clean flights app 
