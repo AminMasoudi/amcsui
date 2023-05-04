@@ -144,25 +144,29 @@ LOGGING = {
         "debug_logs":{
             "level":"DEBUG",
             "class": "logging.FileHandler",
-            "filename": BASE_DIR /"DEBUG.log",
+            "filename": BASE_DIR / "logs/DEBUG.log",
             "formatter": "simple"
         },
         "warnings_log":{
             "level": "WARNING",
             "class": "logging.FileHandler",
-            "filename": BASE_DIR /"WARNING.log",
+            "filename": BASE_DIR / "logs/WARNING.log",
             "formatter": "verbose"
-        }
+        },
+        "users_logger":{
+            "class":"logging.FileHandler",
+            "filename": BASE_DIR / "logs/USERS.log",
+            "formatter": "verbose"
+        },
     },
     "loggers":{
-        "root":{
-            "handlers":["warnings_log",],
-            "propagate": False,
-        },
         "":{
+            "level": 'DEBUG',
+            "handlers":["warnings_log",'debug_logs'],
+        },
+        "users":{
             "level":"DEBUG",
-            "handlers":["debug_logs",],
-            "propagate": False,
+            "handlers":["users_logger",],
 
         }
     }
