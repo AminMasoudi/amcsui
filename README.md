@@ -25,4 +25,7 @@ thanks for your help
   - [ ] add some users to flights test 
 - [ ] add some feature to buy and sell products
 - [ ] add credit to users
+  - [ ] ADD TEST
+  - [ ] buy
+  - [ ] show the left credit 
 - [ ] Not important but working on the front-end
