@@ -225,3 +225,7 @@ DEBUG : not loged in
 DEBUG : not loged in
 DEBUG : not loged in
 DEBUG : not loged in
+INFO : Watching for file changes with StatReloader
+INFO : Watching for file changes with StatReloader
+INFO : /home/amin/projects/github/amcsui/amcsui/products/urls.py changed, reloading.
+INFO : Watching for file changes with StatReloader
