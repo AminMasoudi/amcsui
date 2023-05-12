@@ -14,9 +14,14 @@ class Flight(models.Model):
     origin      = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departure")
     destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrival")
     duration    = models.IntegerField()
+    cost        = models.IntegerField()
+    capacity    = models.IntegerField(default=20)
 
     def __str__(self) -> str:
         return f"{self.pk}:from {self.origin} to {self.destination}"
 
     def is_valid_flight(self):
         return self.destination != self.origin and self.duration > 0
+    
+    def is_bookable(self,user):
+        return (self.capacity > self.passengers) and (self.cost < user.credit)

@@ -12,8 +12,10 @@ def book_view(request):
             flights = list(map(lambda x: Flight.objects.get(id=x), flights_id))
             for flight in flights:
                 #FIXME: add trip if not booked once
-                user_profile.trips.add(flight) 
+                if flight.is_bookable(user_profile):
+                    user_profile.trips.add(flight)
             return HttpResponseRedirect(reverse("users:index"))
+
         flights = Flight.objects.all()
         return render(request, "flights/book.html", {
             "flights": flights

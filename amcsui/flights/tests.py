@@ -9,9 +9,9 @@ class FLightTestCase(TestCase):
         b = Airport.objects.create(code="BBB", city="B")
 
         
-        Flight.objects.create(origin=a, destination=a, duration=100)
-        Flight.objects.create(origin=a, destination=b, duration=-100)
-        Flight.objects.create(origin=a, destination=b, duration=100)
+        Flight.objects.create(origin=a, destination=a, duration=100, cost=100)
+        Flight.objects.create(origin=a, destination=b, duration=-100,cost=100)
+        Flight.objects.create(origin=a, destination=b, duration=100,cost=100)
 
         #TODO add some users
     def test_departure_count(self):
