@@ -23,9 +23,9 @@ thanks for your help
   - [x] clean flights app 
 - [x] add unit-test
   - [ ] add some users to flights test 
-- [ ] add some feature to buy and sell products
-- [ ] add credit to users
-  - [ ] ADD TEST
+- [x] add some feature to buy and sell products
+- [x] add credit to users
+  - [x] ADD TEST
   - [ ] buy
   - [ ] show the left credit 
 - [ ] Not important but working on the front-end

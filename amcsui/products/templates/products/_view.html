@@ -1,0 +1,22 @@
+{%extends "products/layout.html"%}
+
+{% block body %}
+<div>
+    <table>
+        <thead>
+            <th>name</th>
+            <th>price</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td><form action="{% url 'products:add_to_cart' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" placeholder="buy">
+            </form>
+            </td>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
