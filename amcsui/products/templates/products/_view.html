@@ -13,6 +13,8 @@
             <td>{{product.price}}</td>
             <td><form action="{% url 'products:add_to_cart' %}" method="post">
                 {% csrf_token %}
+                <input type="hidden" name="product" value="{{product.id}}">
+                <input type="hidden" name="path" value="{{request.path}}">
                 <input type="submit" placeholder="buy">
             </form>
             </td>

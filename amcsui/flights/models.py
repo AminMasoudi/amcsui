@@ -16,6 +16,7 @@ class Flight(models.Model):
     duration    = models.IntegerField()
     cost        = models.IntegerField()
     capacity    = models.IntegerField(default=20)
+    
 
     def __str__(self) -> str:
         return f"{self.pk}:from {self.origin} to {self.destination}"
@@ -24,4 +25,4 @@ class Flight(models.Model):
         return self.destination != self.origin and self.duration > 0
     
     def is_bookable(self,user):
-        return (self.capacity > self.passengers) and (self.cost < user.credit)
+        return (self.capacity > len(self.passengers.all())) and (self.cost < user.credit)
