@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from flights.models import Flight 
 from django.db import models
-
+from products.models import Product
 
 class UserProfile(models.Model):
     user     = models.OneToOneField(User,primary_key=True, on_delete=models.CASCADE)
@@ -10,6 +10,8 @@ class UserProfile(models.Model):
     # TODO :add through= to many to many
     trips    = models.ManyToManyField(Flight, blank=True, related_name="passengers")
     credit   = models.IntegerField(default=1000)
+    cart     = models.ManyToManyField(Product, blank=True)
+    
     
 
     def __str__(self) -> str:
@@ -18,10 +20,10 @@ class UserProfile(models.Model):
     def is_valid(self):
         return (self.credit >=0)
     
-    def buy(self,product_price):
-        if product_price<self.credit:
-            self.credit -= product_price
+    def buy(self,product:Product):
+        if product.price < self.credit:
+            self.credit -= product.price
+            self.cart.add(product)
             return True
         else:
             return False
-        #TODO: take product and add it to user_profile

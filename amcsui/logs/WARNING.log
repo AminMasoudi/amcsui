@@ -210,3 +210,469 @@ Traceback (most recent call last):
     return Database.Cursor.execute(self, query, params)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 django.db.utils.OperationalError: no such column: flights_flight.capacity
+WARNING 2023-05-13 13:41:02,911 log 13136 140160038024896 Not Found: /
+ERROR 2023-05-13 13:41:10,493 log 13136 140160038024896 Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: products_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 6, in index
+    return render(request, "products/index.html",{"products":products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: products_product
+WARNING 2023-05-13 13:47:03,677 log 14014 140301021857472 Not Found: /static/admin/css/fonts.css
+WARNING 2023-05-13 13:47:03,689 log 14014 140301021857472 Not Found: /static/admin/fonts/Roboto-Regular-webfont.woff
+WARNING 2023-05-13 13:47:03,691 log 14014 140300945192640 Not Found: /static/admin/fonts/Roboto-Light-webfont.woff
+WARNING 2023-05-13 13:48:16,289 log 14262 140218488436416 Not Found: /static/admin/img/icon-changelink.svg
+WARNING 2023-05-13 13:48:16,290 log 14262 140218497877696 Not Found: /static/admin/img/icon-addlink.svg
+WARNING 2023-05-13 13:48:18,372 log 14262 140218488436416 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2023-05-13 13:48:18,373 log 14262 140218497877696 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2023-05-13 13:48:18,386 log 14262 140218480043712 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2023-05-13 13:48:18,433 log 14262 140218480043712 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2023-05-13 13:48:18,482 log 14262 140218480043712 Not Found: /static/admin/img/tooltag-add.svg
+WARNING 2023-05-13 13:48:20,593 log 14262 140218488436416 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2023-05-13 13:48:20,594 log 14262 140218497877696 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2023-05-13 13:48:20,606 log 14262 140218480043712 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2023-05-13 13:48:20,652 log 14262 140218480043712 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2023-05-13 13:48:35,063 log 14262 140218488436416 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2023-05-13 13:48:35,067 log 14262 140218488436416 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2023-05-13 13:48:35,073 log 14262 140218480043712 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2023-05-13 13:48:35,117 log 14262 140218480043712 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2023-05-13 13:48:35,168 log 14262 140218480043712 Not Found: /static/admin/img/icon-yes.svg
+ERROR 2023-05-13 13:48:48,579 log 14262 140218497877696 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 13, in add_to_cart
+    raise NotImplementedError
+NotImplementedError
+WARNING 2023-05-13 16:55:12,989 log 6015 139674654181056 Not Found: /
+ERROR 2023-05-13 16:55:19,838 log 6015 139674654181056 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 17, in add_to_cart
+    user = profile_finder(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/helpers.py", line 11, in profile_finder
+    profile = UserProfile.objects.get(user=user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+users.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2023-05-13 16:57:32,996 log 6172 139754507679424 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 17, in add_to_cart
+    user = profile_finder(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/helpers.py", line 11, in profile_finder
+    profile = UserProfile.objects.get(user=user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+users.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2023-05-13 16:57:34,973 log 6172 139754507679424 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 17, in add_to_cart
+    user = profile_finder(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/helpers.py", line 11, in profile_finder
+    profile = UserProfile.objects.get(user=user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+users.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2023-05-13 16:57:44,041 log 6172 139754507679424 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 17, in add_to_cart
+    user = profile_finder(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/helpers.py", line 11, in profile_finder
+    profile = UserProfile.objects.get(user=user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+users.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2023-05-13 16:58:13,007 log 6219 140448933492416 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 17, in add_to_cart
+    user = profile_finder(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/helpers.py", line 11, in profile_finder
+    profile = UserProfile.objects.get(user=user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+users.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2023-05-13 17:01:53,749 log 6291 140080347371200 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 17, in add_to_cart
+    user = profile_finder(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/helpers.py", line 11, in profile_finder
+    profile = UserProfile.objects.get(user=user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+users.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2023-05-13 17:02:17,183 log 6291 140080347371200 Internal Server Error: /users/
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/users/views.py", line 16, in index
+    return index_view(request)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/users/helpers.py", line 19, in index_view
+    profile = profile_finder(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/helpers.py", line 11, in profile_finder
+    profile = UserProfile.objects.get(user=user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+users.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2023-05-13 17:02:37,342 log 6291 140080347371200 Internal Server Error: /users/
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/users/views.py", line 16, in index
+    return index_view(request)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/users/helpers.py", line 19, in index_view
+    profile = profile_finder(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/helpers.py", line 11, in profile_finder
+    profile = UserProfile.objects.get(user=user)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+users.models.UserProfile.DoesNotExist: UserProfile matching query does not exist.
+ERROR 2023-05-13 17:03:59,804 log 6291 140080347371200 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: users_userprofile_cart
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 20, in add_to_cart
+    user.cart.add(product)
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 1087, in add
+    self._add_items(
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 1329, in _add_items
+    self.through._default_manager.using(db).bulk_create(
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 816, in bulk_create
+    returned_columns = self._batched_insert(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 1825, in _batched_insert
+    self._insert(
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/query.py", line 1791, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1660, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: users_userprofile_cart
+WARNING 2023-05-13 17:16:43,606 log 6442 140251996190400 Not Found: /
+WARNING 2023-05-13 17:22:44,320 log 6785 140178470467264 Not Found: /ad/
+ERROR 2023-05-13 17:23:34,931 log 6785 140178470467264 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 22, in add_to_cart
+    return HttpResponseRedirect(reverse("products:_view"))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '_view' with no arguments not found. 1 pattern(s) tried: ['products/(?P<name>[^/]+)\\Z']
+ERROR 2023-05-13 17:25:02,041 log 6867 140210876122816 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 22, in add_to_cart
+    return HttpResponseRedirect(request.HTTP_REFERER)
+                                ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'HTTP_REFERER'
+ERROR 2023-05-13 17:29:31,249 log 7173 139782003037888 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 22, in add_to_cart
+    return HttpResponseRedirect(request.url)
+                                ^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'url'
+ERROR 2023-05-13 17:31:08,973 log 7173 139782003037888 Internal Server Error: /products/add_to_cart
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/products/views.py", line 22, in add_to_cart
+    return HttpResponseRedirect(request.url)
+                                ^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'url'
+WARNING 2023-05-15 19:26:59,346 log 4316 140517271869120 Not Found: /
+ERROR 2023-05-15 19:29:13,808 log 4316 140517271869120 Internal Server Error: /flights/bookaflight/
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/views.py", line 21, in book
+    return book_view(request)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/helpers.py", line 15, in book_view
+    if flight.is_bookable(user_profile):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/models.py", line 27, in is_bookable
+    return (self.capacity > self.passengers) and (self.cost < user.credit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'int' and 'ManyRelatedManager'
+ERROR 2023-05-15 19:29:33,767 log 4316 140517271869120 Internal Server Error: /flights/bookaflight/
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/views.py", line 21, in book
+    return book_view(request)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/helpers.py", line 15, in book_view
+    if flight.is_bookable(user_profile):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/models.py", line 27, in is_bookable
+    return (self.capacity > self.passengers) and (self.cost < user.credit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'int' and 'ManyRelatedManager'
+ERROR 2023-05-15 19:40:12,185 log 5301 140049275573952 Internal Server Error: /flights/bookaflight/
+Traceback (most recent call last):
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/.local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/views.py", line 21, in book
+    return book_view(request)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/helpers.py", line 15, in book_view
+    if flight.is_bookable(user_profile):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amin/projects/github/amcsui/amcsui/flights/models.py", line 28, in is_bookable
+    return (self.capacity > len(self.passengers)) and (self.cost < user.credit)
+                            ^^^^^^^^^^^^^^^^^^^^
+TypeError: object of type 'ManyRelatedManager' has no len()
